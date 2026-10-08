@@ -79,8 +79,8 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=Path("outputs"))
     parser.add_argument("--var1-degree", type=int, default=5)
     parser.add_argument("--var1-alpha", type=float, default=0.024)
-    parser.add_argument("--var2-degree", type=int, default=10)
-    parser.add_argument("--var2-alpha", type=float, default=1.0)
+    parser.add_argument("--var2-degree", type=int, default=8)
+    parser.add_argument("--var2-alpha", type=float, default=0.1)
     args = parser.parse_args()
 
     data = args.data_dir
