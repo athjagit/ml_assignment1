@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+
+# Assignment datasets are not part of the GitHub submission.
+data/*.csv
+
+# Generated predictions are submitted separately.
+outputs/*.csv
+
+# Local experiment dumps not intentionally committed.
+*.tmp
