@@ -8,7 +8,7 @@ The raw datasets and final prediction files are intentionally not stored in this
 
 `var1` uses degree-5 polynomial features. Lasso is first used to select useful polynomial terms, and ordinary least squares is then refit on the retained terms (post-Lasso OLS). The selected Lasso regularization strength is `alpha=0.024`.
 
-`var2` uses degree-10 polynomial features followed by standardized Ridge regression with `alpha=1.0`.
+`var2` uses degree-8 polynomial features followed by standardized Ridge regression with `alpha=0.1`. The degree-8 choice follows the observed unregularized validation curve, whose minimum occurs at degree 8; Ridge is then used as a light coefficient-stabilization step.
 
 Five-fold shuffled cross-validation with `random_state=42` was used during model selection, with validation MSE as the primary metric and R² as a secondary metric.
 
@@ -83,5 +83,5 @@ This writes the two prediction CSVs to `outputs/`.
 The final hyperparameters can also be supplied explicitly:
 
 ```powershell
-python src/train_and_predict.py --var1-degree 5 --var1-alpha 0.024 --var2-degree 10 --var2-alpha 1.0
+python src/train_and_predict.py --var1-degree 5 --var1-alpha 0.024 --var2-degree 8 --var2-alpha 0.1
 ```
